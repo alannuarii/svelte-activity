@@ -10,7 +10,7 @@
       <a href="/" class="navbar-brand">DAILY ACTIVITY</a>
 
       <div>
-        <a href="/detail" class="btn btn-outline-info me-1"><i class="bi-list"></i></a>
+        <a href="/rekap" class="btn btn-outline-info me-1"><i class="bi-list"></i></a>
       </div>
     {:else}
       <a href="/" class="btn btn-outline-info me-1">Back</a>

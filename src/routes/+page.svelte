@@ -21,17 +21,17 @@
         </div>
         <div class="mb-4">
           <label for="exampleFormControlInput1" class="form-label">Tanggal</label>
-          <input type="date" name="tanggal" class="form-control" id="exampleFormControlInput1" />
+          <input type="date" name="tanggal" class="form-control" id="exampleFormControlInput1" required />
         </div>
         {#if selected === "eksternal"}
           <div class="mb-4">
             <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
-            <input type="text" name="perusahaan" class="form-control" id="exampleFormControlInput1" />
+            <input type="text" name="perusahaan" class="form-control" id="exampleFormControlInput1" required />
           </div>
         {/if}
         <div class="mb-4">
           <label for="exampleFormControlInput1" class="form-label">Nama Pekerjaan</label>
-          <input type="text" name="pekerjaan" class="form-control" id="exampleFormControlInput1" />
+          <input type="text" name="pekerjaan" class="form-control" id="exampleFormControlInput1" required />
         </div>
         <div class="mb-5">
           <label for="exampleFormControlInput1" class="form-label">Dokumentasi</label>
