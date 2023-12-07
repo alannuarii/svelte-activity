@@ -1,5 +1,4 @@
 <script>
-  import ModalInput from "./ModalInput.svelte";
   import { page } from "$app/stores";
 
   $: path = $page.url.pathname;
@@ -11,13 +10,11 @@
       <a href="/" class="navbar-brand">DAILY ACTIVITY</a>
 
       <div>
-        <a href="/detail" class="btn btn-outline-info me-1">Detail</a>
-        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Input</button>
-        <ModalInput />
+        <a href="/detail" class="btn btn-outline-info me-1"><i class="bi-list"></i></a>
       </div>
     {:else}
-      <a href="/" class="btn btn-outline-light me-1">Back</a>
-      <h6 href="/" class="navbar-brand">Daily Activity</h6>
+      <a href="/" class="btn btn-outline-info me-1">Back</a>
+      <h6 href="/" class="navbar-brand me-3">DAILY ACTIVITY</h6>
     {/if}
   </div>
 </nav>
