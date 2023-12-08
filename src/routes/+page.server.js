@@ -8,7 +8,7 @@ export const actions = {
         formData.append('jenis', data.get('jenis'));
         formData.append('tanggal', data.get('tanggal'));
         formData.append('pekerjaan', data.get('pekerjaan'));
-        if (data.get('perushaan') === null) {
+        if (data.get('perusahaan') === null) {
             formData.append('perusahaan', 'PLN NP');
         } else {
             formData.append('perusahaan', data.get('perusahaan'));

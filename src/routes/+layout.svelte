@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Rekap Pinjaman</title>
+	<title>Daily Activity</title>
 	<meta name="description" content="Rekap Pinjaman" />
 </svelte:head>
 

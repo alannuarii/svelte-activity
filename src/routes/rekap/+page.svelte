@@ -5,6 +5,7 @@
 </script>
 
 <section>
+  <h3 class="text-center mb-4 text-info">REKAP DATA</h3>
   <div class="table-responsive">
     <table class="table table-bordered">
       <thead class="table-secondary">
@@ -19,7 +20,7 @@
           <tr>
             <td class="text-center align-middle">{i + 1}</td>
             <td class="text-center align-middle">{date2(act.tanggal)}</td>
-            <td class="align-middle"><a href="/" class="text-info text-decoration-none">{act.pekerjaan}</a></td>
+            <td class="align-middle"><a href="/rekap/{act.kode}" class="text-info text-decoration-none">{act.pekerjaan}</a></td>
           </tr>
         {/each}
       </tbody>
@@ -30,5 +31,8 @@
 <style>
   table {
     font-size: 13px;
+  }
+  h3{
+    font-weight: 700;
   }
 </style>

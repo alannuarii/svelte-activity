@@ -1,7 +1,18 @@
 <script>
   import { page } from "$app/stores";
 
+  // let accessPath
+  let newPath;
+
   $: path = $page.url.pathname;
+  $: {
+    let accessPath = path.split("/");
+    accessPath.pop();
+    newPath = accessPath.join("/");
+    if (newPath === "") {
+      newPath = "/";
+    }
+  }
 </script>
 
 <nav class="navbar bg-dark shadow">
@@ -13,7 +24,7 @@
         <a href="/rekap" class="btn btn-outline-info me-1"><i class="bi-list"></i></a>
       </div>
     {:else}
-      <a href="/" class="btn btn-outline-info me-1">Back</a>
+      <a href={newPath} class="btn btn-outline-info me-1">Back</a>
       <h6 href="/" class="navbar-brand me-3">DAILY ACTIVITY</h6>
     {/if}
   </div>
