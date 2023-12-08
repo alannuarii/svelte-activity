@@ -1,11 +1,16 @@
 <script>
-  import { date1 } from "../../../lib/js/date";
-  //   import { API_ENDPOINT } from "$env/dynamic/private";
+  import { date1, date3 } from "../../../lib/js/date";
 
-  const API_ENDPOINT = "http://192.168.211.107:5010";
   export let data;
+
   const activity = data.data.data.length > 0 ? data.data.data : [];
-  console.log(activity)
+  const endpoint = data.endpoint;
+
+  let isFileSelected = false;
+
+  const handleSubmit = (event) => {
+    isFileSelected = !!event.target.files.length;
+  };
 </script>
 
 <section>
@@ -27,9 +32,25 @@
     </div>
     <div class="border p-3 rounded-4">
       <h6 class="text-center">Dokumentasi</h6>
-      {#each activity as pic}
-        <div class="mt-3"><img src={`${API_ENDPOINT}/static/img/${pic.foto}`} class="img-fluid rounded-4" alt="" /></div>
-      {/each}
+      {#if activity[0].foto}
+        {#each activity as pic}
+          <div class="mt-3"><img src={`${endpoint}/static/img/${pic.foto}`} class="img-fluid rounded-4" alt="" /></div>
+        {/each}
+      {:else}
+        <div>
+          <div class="text-center mb-5 mt-4"><span class="badge text-bg-secondary">Tidak ada foto</span></div>
+          <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="foto" class="form-control" id="exampleFormControlInput1" multiple accept="image/*" on:change={handleSubmit} />
+            <input type="hidden" name="tanggal" class="form-control" id="exampleFormControlInput1" value={date3(activity[0].tanggal)} />
+            <input type="hidden" name="pekerjaan" class="form-control" id="exampleFormControlInput1" value={activity[0].pekerjaan} />
+            {#if isFileSelected}
+              <div class="mt-3 text-center">
+                <button type="submit" class="btn btn-sm btn-info">Submit</button>
+              </div>
+            {/if}
+          </form>
+        </div>
+      {/if}
     </div>
   </div>
 </section>
