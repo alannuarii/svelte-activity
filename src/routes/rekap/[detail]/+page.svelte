@@ -34,7 +34,17 @@
       <h6 class="text-center">Dokumentasi</h6>
       {#if activity[0].foto}
         {#each activity as pic}
-          <div class="mt-3"><img src={`${endpoint}/static/img/${pic.foto}`} class="img-fluid rounded-4" alt="" /></div>
+          <div class="mt-3 position-relative">
+            <img src={`${endpoint}/static/img/${pic.foto}`} class="img-fluid rounded-4" alt="" />
+            <div class="dropdown position-absolute top-0 end-0 mt-2">
+              <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi-three-dots-vertical"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href={`${endpoint}/static/img/${pic.foto}`} download={pic.foto}>Download</a></li>
+              </ul>
+            </div>
+          </div>
         {/each}
       {:else}
         <div>
@@ -54,3 +64,15 @@
     </div>
   </div>
 </section>
+
+<style>
+  i {
+    font-size: 30px;
+  }
+  img {
+    opacity: 0.8;
+  }
+  button {
+    border: none;
+  }
+</style>
