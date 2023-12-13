@@ -26,3 +26,12 @@ export const actions = {
         return res.json();
     }
 };
+
+export const load = async () => {
+    const res = await fetch(`${API_ENDPOINT}/check-data`);
+    const data = await res.json();
+
+    return {
+        data: data,
+    };
+};

@@ -15,6 +15,17 @@
 
 <section>
   <div class="px-3 pb-4">
+    <div class="row mb-2">
+      <div class="col-8 d-flex align-items-center">
+        <h5 class="text-info">DETAIL PEKERJAAN</h5>
+      </div>
+      <div class="col-4 text-end">
+        <form method="POST">
+          <input type="hidden" name="kode" value={activity[0].kode} />
+          <button type="submit" class="btn bg-danger-subtle rounded-5"><i class="bi-trash text-danger"></i></button>
+        </form>
+      </div>
+    </div>
     <div class="form-floating mb-3">
       <input type="text" class="form-control bg-white" id="floatingInput" value={date1(activity[0].tanggal)} disabled />
       <label for="floatingInput">Tanggal Pekerjaan</label>
@@ -68,11 +79,18 @@
 <style>
   i {
     font-size: 30px;
+    border: none;
+  }
+  .row i {
+    font-size: 20px;
   }
   img {
     opacity: 0.8;
   }
   button {
     border: none;
+  }
+  h5 {
+    font-weight: 700;
   }
 </style>
